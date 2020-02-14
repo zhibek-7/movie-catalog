@@ -1,0 +1,70 @@
+﻿
+@model movie_catalog.Models.IndexViewModel
+@using movie_catalog.Helpers
+@using movie_catalog.Models
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Название
+        </th>
+        <th>
+           Описание
+        </th>
+        <th>
+            Год выпуска
+        </th>
+        <th>
+            Режиссёр
+        </th>
+        <th>
+            Пользователь
+        </th>
+        <th>
+            ID
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Movies)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nameMovie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateBegin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.producer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.userId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @*@Html.ActionLink("Delete", "Delete", new { id = item.id })*@
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<div class="btn-group">
+    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index", new { page = x }))
+</div>

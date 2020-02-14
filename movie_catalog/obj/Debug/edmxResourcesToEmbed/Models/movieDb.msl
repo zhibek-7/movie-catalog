@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище movieModelContainer" CdmEntityContainer="movieEntities">
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="movieModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="movie">
+      <EntityTypeMapping TypeName="movieModel.movie">
+        <MappingFragment StoreEntitySet="movie">
+          <ScalarProperty Name="file" ColumnName="file" />
+          <ScalarProperty Name="poster" ColumnName="poster" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="user" ColumnName="user" />
+          <ScalarProperty Name="producer" ColumnName="producer" />
+          <ScalarProperty Name="dateBegin" ColumnName="dateBegin" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="nameMovie" ColumnName="nameMovie" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
